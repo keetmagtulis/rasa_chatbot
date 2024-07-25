@@ -66,6 +66,7 @@ rasa shell
 
 ## Enabling Server and Rasa Actions
 ```bash
+rasa run --enable-api
 rasa run actions
 ```
 
