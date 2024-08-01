@@ -1,8 +1,8 @@
-# PET Intranet Chat-Bot
+# Chat-Bot
 
 ## Overview
 
-The PET Intranet Chat-Bot enhances the PET Intranet Website by providing users with quick answers to frequently asked questions (FAQs) and basic support. Built using the Rasa framework, this Chat-Bot is designed to streamline user interactions and provide efficient support.
+The Chat-Bot enhances the Intranet Website by providing users with quick answers to frequently asked questions (FAQs) and basic support. Built using the Rasa framework, this Chat-Bot is designed to streamline user interactions and provide efficient support.
 
 ## Features
 
@@ -17,11 +17,11 @@ The PET Intranet Chat-Bot enhances the PET Intranet Website by providing users w
 
 - **Rasa Framework:** For natural language understanding and dialogue management.
 - **Python:** For implementing custom logic and integrations.
-- **Database Integration:** Connects with PET Intranet's systems to access real-time data.
+- **Database Integration:** Connects with Intranet's systems to access real-time data.
 
 ## Goals
 
-- Assist users with FAQs and provide basic support on the PET Intranet Website.
+- Assist users with FAQs and provide basic support on the Intranet Website.
 - Automate routine tasks and streamline user interactions.
 - Continuously improve based on user feedback and interaction data.
 
