@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <img src="../images/Intranet_Home_Page.png" alt="">
+
+    <!-- Floating Chatbox Toggle Button -->
+    <div class="chatbox-toggle" id="chatboxToggle">Chat</div>
+
+    <!-- Chatbox Container -->
+    <div class="chatbox-container" id="chatboxContainer">
+        <div class="chatbox-header">
+            Chat with us!
+            <button class="chatbox-close" id="chatboxClose">&times;</button>
+        </div>
+        <div class="chatbox-messages" id="chatboxMessages"></div>
+        <div class="chatbox-input">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
