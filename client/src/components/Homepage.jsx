@@ -7,7 +7,9 @@ function Home() {
     return (
     <>
     
-    <h1 className='text-lg top-0'>Kit was here</h1>
+    <div className="w-screen h-screen bg-neutral-800">
+        Hello
+    </div>
         
     </>
     );
