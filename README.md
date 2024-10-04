@@ -19,17 +19,18 @@ The Chat-Bot enhances the Intranet Website by providing users with quick answers
 - **Python:** For implementing custom logic and integrations.
 - **Database Integration:** Connects with Intranet's systems to access real-time data.
 
-## Goals
-
-- Assist users with FAQs and provide basic support on the Intranet Website.
-- Automate routine tasks and streamline user interactions.
-- Continuously improve based on user feedback and interaction data.
-
-## Reference Videos: 
-
-[How to Build Chatbot with Python & Rasa](https://www.youtube.com/watch?v=ykeamfE0-g4).
 
 ## How to Setup
+
+### Frontend
+
+### To run React App 
+
+```bash 
+   npm run dev
+```
+
+### Backend
 
 Python Version - 3.9.0
 
