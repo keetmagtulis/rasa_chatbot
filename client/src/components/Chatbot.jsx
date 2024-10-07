@@ -40,7 +40,7 @@ function Chatbot() {
           </div>
 
           {/* Input Section */}
-          <div className="flex items-center bg-neutral-100 p-2 rounded-lg shadow-inner">
+          <div className="flex items-center bg-neutral-100 p-2  border-t-black">
             <input
               className="border-none flex-1 p-2 rounded-lg focus:outline-none"
               type="text"
