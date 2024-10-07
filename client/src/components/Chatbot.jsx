@@ -12,7 +12,7 @@ function Chatbot() {
   return (
     <>
       {/* Toggle Button */}
-      <div className="fixed bottom-10 right-10">
+      <div className="fixed bottom-14 right-14">
         <button 
           onClick={toggleChatbot} 
           className="bg-neutral-500 text-white px-4 py-2 rounded-full hover:bg-neutral-600"
@@ -25,8 +25,8 @@ function Chatbot() {
       {isOpen && (
         <div className="fixed bottom-28 right-14 w-80 h-96 bg-neutral-100 text-neutral-800 p-4 rounded-lg shadow-lg">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-bold">Chatbot</h2>
-            <button onClick={toggleChatbot} className="text-white font-bold">
+            <h2 className="text-lg font-bold">AI Bot</h2>
+            <button onClick={toggleChatbot} className="text-neutral-800 font-bold">
               &#x2715;
             </button>
           </div>

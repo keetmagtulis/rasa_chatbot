@@ -8,7 +8,7 @@ function Home() {
     <>
     
     <div className="w-screen h-screen bg-neutral-800">
-        Hello
+        
     </div>
         
     </>
