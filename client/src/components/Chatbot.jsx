@@ -1,4 +1,5 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
+import { IoChatbubbleEllipses } from "react-icons/io5";
 
 function Chatbot() {
   // State to toggle the chatbot visibility
@@ -12,20 +13,20 @@ function Chatbot() {
   return (
     <>
       {/* Toggle Button */}
-      <div className="fixed bottom-20 right-36">
+      <div className="fixed bottom-16 right-36">
         <button 
           onClick={toggleChatbot} 
-          className="bg-neutral-500 text-white px-5 py-4 rounded-full hover:bg-neutral-600"
+          className="bg-neutral-500 text-white px-5 py-4 w-18 rounded-full hover:bg-neutral-600"
         >
-          {isOpen ? 'Close' : 'Chat'}
+          <IoChatbubbleEllipses className='w-8 h-8' />
         </button>
       </div>
       {/* Chatbot Box */}
       {isOpen && (
-        <div className="fixed bottom-36 right-36 w-80 h-96 bg-neutral-100 text-neutral-800 p-4 rounded-lg shadow-lg border-1 z-50">
+        <div className="fixed bottom-36 right-36 w-80 h-96 bg-neutral-100 text-neutral-800 p-1 rounded-lg shadow-lg border-1 z-50">
           
           {/* Header with Close Button */}
-          <div className="flex justify-between items-center mb-2 bg-neutral-100">
+          <div className="flex justify-between items-center mb-2 bg-neutral-100 px-2">
             <h2 className="text-lg font-bold">AI Bot</h2>
             <button onClick={toggleChatbot} className="text-neutral-800 font-bold">
               &#x2715;
@@ -40,13 +41,13 @@ function Chatbot() {
           </div>
 
           {/* Input Section */}
-          <div className="flex items-center bg-neutral-100 p-2  border-t-black">
+          <div className="flex items-center bg-neutral-300 p-2 border-t-2 mt-7 rounded-b-lg">
             <input
-              className="border-none flex-1 p-2 rounded-lg focus:outline-none"
+              className="border-none flex-1 p-2 rounded-lg focus:outline-none px-2 "
               type="text"
               placeholder="Type a message..."
             />
-            <button className="ml-2 bg-neutral-600 text-white px-4 py-2 rounded-lg shadow hover:bg-neutral-700">
+            <button className="ml-2 bg-neutral-800 text-white px-4 py-2 rounded-lg shadow hover:bg-neutral-900">
               Send
             </button>
           </div>
