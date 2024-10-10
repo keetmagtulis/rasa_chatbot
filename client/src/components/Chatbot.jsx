@@ -7,6 +7,7 @@ const apiUrl = 'http://localhost:5005/webhooks/rest/webhook';
 function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [userInputValue, setUserInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
@@ -16,6 +17,8 @@ function Chatbot() {
     if (userInputValue.trim() === '') return;
 
     addMessage('user', userInputValue);
+
+    setIsTyping(true);
 
     fetch(apiUrl, {
       method: 'POST',
@@ -35,9 +38,13 @@ function Chatbot() {
             addImages('bot', message.image)
           }
         });
+
+        
+
       })
       .catch(error => {
         console.error('Error:', error);
+        setIsTyping(false);
       });
 
     setUserInputValue(''); // Reset the input
@@ -125,6 +132,10 @@ function Chatbot() {
             id="chatboxMessages"
             className="flex-1 bg-neutral-100 p-1 overflow-y-auto"
           ></div>
+
+          {isTyping && (
+              addMessage('bot', 'Typing ...')
+            )}
 
           {/* Input Section */}
           <div className="flex items-center bg-neutral-100 p-4 border-t-2">
