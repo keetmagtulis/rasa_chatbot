@@ -38,7 +38,7 @@ Python Version - 3.8.10
 ```bash
 python -m venv .venv
 
-\\ Activate venv
+#Activate venv
 source .venv/Scripts/activate
 
 ```
@@ -52,7 +52,7 @@ pip install setuptools==58.0.4
 ```bash
    pip install rasa
  
- \\installation of requirements
+   #Installation of requirements
    pip install -r requirements.txt
 
 ```
