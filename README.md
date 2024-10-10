@@ -34,17 +34,27 @@ The Chat-Bot enhances the Intranet Website by providing users with quick answers
 
 Python Version - 3.9.0
 
-### Create a virtual environment 
+### Create a virtual environment and activate venv
 ```bash
 python -m venv .venv
-```
-### Activate venv 
-```bash
+
+\\ Activate venv
 source .venv/Scripts/activate
+
 ```
-### Install Rasa 
+
+### Downgrade setuptools for the installation of requirements
 ```bash
- pip install rasa
+pip install setuptools==58.0.4
+```
+
+### Installation of Tasa and Requirements
+```bash
+   pip install rasa
+ 
+ \\installation of requirements
+   pip install -r requirements.txt
+
 ```
 ## Initialization and Traning of Model
 
