@@ -32,7 +32,7 @@ The Chat-Bot enhances the Intranet Website by providing users with quick answers
 
 ### Backend
 
-Python Version - 3.9.0
+Python Version - 3.8.10
 
 ### Create a virtual environment and activate venv
 ```bash
