@@ -3,3 +3,58 @@
 @tailwind utilities;
 
 
+/*Style for Messages*/
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 50%;
+  }
+
+  .message.user {
+    background-color: #5a5a5a; /* User messages in purple */
+    color: white;
+    margin-left: auto; /* Align to right */
+  }
+
+  .message.bot {
+    background-color: #e5e7eb; /* Bot messages in light gray */
+    color: black;
+    margin-right: auto; /* Align to left */
+  }
+
+  .timestamp {
+    font-size: 0.75rem;
+    color: #6b7280; /* Text color for timestamps */
+    text-align: right;
+    margin-top: 2px;
+  }
+
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .response-button {
+    background-color: #a9a9a9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: 1px;
+  }
+
+  .response-button:hover {
+    background-color: #444444;
+  }
+
+
+  .chatbot-image {
+    width: 40px;
+    height: 40px;
+  }
