@@ -58,6 +58,11 @@ pip install setuptools==58.0.4
 ```
 ## Initialization and Traning of Model
 
+```bash
+rasa init
+```
+
+
 ### How to train model 
 ```bash
 rasa train
@@ -65,14 +70,6 @@ rasa train
 ### How to run Rasa 
 ```bash
 rasa shell
-```
-### NOTE: Make sure to install rust and upgrade version of crpytography to 3.4.7
-
-### Installation of Rust
-
- ```bash
- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
- pip install cryptography==3.4.7
 ```
 
 ## Enabling Server and Rasa Actions
