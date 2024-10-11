@@ -8,8 +8,22 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - initial_message
+  - faqs
+  - about_us
 
 responses:
+
+  utter_initial_message: 
+  - text: | 
+          Welcome to shoepify! I'm Shoebot. 
+          How can I help you today? 
+    buttons: 
+      - tittle: "FAQs"
+      - payload: "/faqs"
+      - title: "About Us"
+      - payload: "/about_us"
+
   utter_greet:
   - text: "Hey! How are you?"
 

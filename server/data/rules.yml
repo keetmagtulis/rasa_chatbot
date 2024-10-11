@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Initial Message
+  steps: 
+  - intent: initial_message
+  - action: utter_initial_message

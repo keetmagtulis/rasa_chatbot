@@ -10,7 +10,12 @@ function Chatbot() {
   const [isTyping, setIsTyping] = useState(false);
 
   const toggleChatbot = () => {
-    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsOpen(true);
+      addInitialMessage();
+    } else {
+      setIsOpen(false);
+    }
   };
 
   const handleSendMessage = () => {
@@ -69,6 +74,33 @@ function Chatbot() {
     document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
   }
 
+  function addInitialMessage() {
+
+      fetch(apiUrl, {
+        method: "POST", 
+        header: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({"message": "/initial_message" })
+      })
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(message => {
+            if(message.text) {
+              addMessage('bot', message.text);
+            }
+            if(message.buttons){
+              addMessage('bot', message.buttons);
+            }
+            if(message.image){
+              addMessage('bot', message.image);
+            }
+        })
+      .catch(error => {
+        console.error('Error', error);
+      })
+      }) 
+  
+      }
+
   const addButtons = (buttons) => {
     const buttonContainer = document.createElement('div');
     buttonContainer.className = 'button-container';
@@ -103,6 +135,9 @@ function Chatbot() {
       document.getElementById('chatboxMessages').appendChild(imageContainer);
       document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
     }
+
+
+
     
   return (
     <>

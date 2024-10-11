@@ -74,7 +74,7 @@ rasa shell
 
 ## Enabling Server and Rasa Actions
 ```bash
-rasa run --enable-api
+rasa run --model models --enable-api --cors "*"
 rasa run actions
 ```
 
