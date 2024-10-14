@@ -23,34 +23,36 @@ function Chatbot() {
 
     addMessage('user', userInputValue);
 
-    setIsTyping(true);
+    setIsTyping(true); // Set typing indicator to true
 
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ "message": userInputValue })
-    })
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(message => {
-          if (message.text) {
-            addMessage('bot', message.text);
-          }
-          if (message.buttons) {
-            addButtons('bot',message.buttons);
-          }
-          if(message.image) {
-            addImages('bot', message.image)
-          }
-        });
-
-        
-
+    setTimeout(() => { // Delay the bot's response to simulate typing
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ "message": userInputValue })
       })
-      .catch(error => {
-        console.error('Error:', error);
-        setIsTyping(false);
-      });
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(message => {
+            if (message.text) {
+              addMessage('bot', message.text);
+            }
+            if (message.buttons) {
+              addButtons('bot', message.buttons);
+            }
+            if (message.image) {
+              addImages('bot', message.image);
+            }
+          });
+
+          setIsTyping(false); // Hide typing indicator after response
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          setIsTyping(false);
+        });
+    }, 1000); // Simulate a 1-second delay before bot responds
+
 
     setUserInputValue(''); // Reset the input
   };
@@ -63,9 +65,10 @@ function Chatbot() {
     messageText.innerText = text;
     
     const timestamp = document.createElement('div');
-    timestamp.className = 'timestamp';
+    timestamp.className = 'timestamp-sender';
     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     timestamp.innerText = currentTime;
+     
     
     messageContainer.appendChild(messageText);
     messageContainer.appendChild(timestamp);
@@ -75,68 +78,62 @@ function Chatbot() {
   }
 
   function addInitialMessage() {
-
-      fetch(apiUrl, {
-        method: "POST", 
-        header: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({"message": "/initial_message" })
-      })
+    fetch(apiUrl, {
+      method: "POST",
+      header: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ "message": "/initial_message" })
+    })
       .then(response => response.json())
       .then(data => {
         data.forEach(message => {
-            if(message.text) {
-              addMessage('bot', message.text);
-            }
-            if(message.buttons){
-              addButtons('bot', message.buttons);
-            }
-            if(message.image){
-              addImages('bot', message.image);
-            }
+          if (message.text) {
+            addMessage('bot', message.text);
+          }
+          if (message.buttons) {
+            addButtons('bot', message.buttons);
+          }
+          if (message.image) {
+            addImages('bot', message.image);
+          }
         });
-      }) 
-  
-      }
+      });
+  }
 
-      const addButtons = (sender, buttons) => {
-        const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'button-container';
-      
-        buttons.forEach(button => {
-          const btn = document.createElement('button');
-          btn.className = 'response-button';
-          btn.innerText = button.title; // Render the button title correctly
-          btn.onclick = function () {
-            sendMessage(button.payload); // Send button payload
-            this.style.backgroundColor = "rgb(170, 40, 40)";
-            this.style.color = "#fff";
-            this.disabled = true;
-          };
-          buttonContainer.appendChild(btn);
-        });
-      
-        document.getElementById('chatboxMessages').appendChild(buttonContainer);
-        document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
+  const addButtons = (sender, buttons) => {
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+
+    buttons.forEach(button => {
+      const btn = document.createElement('button');
+      btn.className = 'response-button';
+      btn.innerText = button.title;
+      btn.onclick = function () {
+        sendMessage(button.payload);
+        this.style.backgroundColor = "rgb(0, 0, 0)";
+        this.style.color = "#fff";
+        this.disabled = true;
       };
-      
+      buttonContainer.appendChild(btn);
+    });
 
-    function addImages(sender, imageUrl) {
-      const imageContainer = document.createElement('div');
-      imageContainer.className = `message ${sender}`;
-      
-      const img = document.createElement('img');
-      img.src = imageUrl;
-      img.alt = '404';
-      img.className = 'chatbot-image'; // Add your styles here for better formatting
+    document.getElementById('chatboxMessages').appendChild(buttonContainer);
+    document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
+  };
+
+  function addImages(sender, imageUrl) {
+    const imageContainer = document.createElement('div');
+    imageContainer.className = `message ${sender}`;
     
-      imageContainer.appendChild(img);
-      document.getElementById('chatboxMessages').appendChild(imageContainer);
-      document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
-    }
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = '404';
+    img.className = 'chatbot-image'; // Add your styles here for better formatting
+  
+    imageContainer.appendChild(img);
+    document.getElementById('chatboxMessages').appendChild(imageContainer);
+    document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
+  }
 
-
-
-    
   return (
     <>
       {/* Toggle Button */}
@@ -166,9 +163,14 @@ function Chatbot() {
             className="flex-1 bg-neutral-100 p-1 overflow-y-auto"
           ></div>
 
+          {/* Typing Indicator */}
           {isTyping && (
-              addMessage('bot', 'Typing ...')
-            )}
+            <div className="typing-indicator">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          )}
 
           {/* Input Section */}
           <div className="flex items-center bg-neutral-100 p-4 border-t-2">
