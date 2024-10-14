@@ -5,35 +5,43 @@
 
 /*Style for Messages*/
 
-.message {
-    margin-bottom: 10px;
-    padding: 8px 12px;
-    border-radius: 15px;
-    max-width: 50%;
-  }
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
 
-  .message.user {
-    background-color: #5a5a5a; /* User messages in purple */
-    color: white;
-    margin-left: auto; /* Align to right */
-  }
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 70%;
+}
+
+.message.user {
+  text-align: left;
+  background-color: #5a5a5a;
+  color: white;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: inline-block;
+  margin-left: auto;
+ 
+}
+
 
   .message.bot {
     background-color: #e5e7eb; /* Bot messages in light gray */
     color: black;
-    margin-right: auto; /* Align to left */
+    margin-right: auto;
   }
 
   .timestamp {
     font-size: 0.75rem;
-    color: #6b7280; /* Text color for timestamps */
-    text-align: right;
-    margin-top: 2px;
-  }
-
-  .timestamp-sender {
-    font-size: 0.75rem;
-    color: #e5e7eb; /* Text color for timestamps */
+    color: #b1b2b4; /* Text color for timestamps */
     text-align: right;
     margin-top: 2px;
   }

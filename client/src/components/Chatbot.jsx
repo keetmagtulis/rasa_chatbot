@@ -23,9 +23,11 @@ function Chatbot() {
 
     addMessage('user', userInputValue);
 
-    setIsTyping(true); // Set typing indicator to true
+    setIsTyping(true); 
 
-    setTimeout(() => { // Delay the bot's response to simulate typing
+    // Bot's response. Set timeout is for the typing indicator effect
+
+    setTimeout(() => { 
       fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,17 +46,17 @@ function Chatbot() {
               addImages('bot', message.image);
             }
           });
-
-          setIsTyping(false); // Hide typing indicator after response
+          // Will hide the response after send.  
+          setIsTyping(false); 
         })
         .catch(error => {
           console.error('Error:', error);
           setIsTyping(false);
         });
-    }, 1000); // Simulate a 1-second delay before bot responds
+    }, 1000); 
 
-
-    setUserInputValue(''); // Reset the input
+    // Reset the input
+    setUserInputValue(''); 
   };
 
   function addMessage(sender, text) {
@@ -65,7 +67,7 @@ function Chatbot() {
     messageText.innerText = text;
     
     const timestamp = document.createElement('div');
-    timestamp.className = 'timestamp-sender';
+    timestamp.className = 'timestamp';
     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     timestamp.innerText = currentTime;
      
@@ -127,7 +129,7 @@ function Chatbot() {
     const img = document.createElement('img');
     img.src = imageUrl;
     img.alt = '404';
-    img.className = 'chatbot-image'; // Add your styles here for better formatting
+    img.className = 'chatbot-image';
   
     imageContainer.appendChild(img);
     document.getElementById('chatboxMessages').appendChild(imageContainer);
@@ -160,7 +162,7 @@ function Chatbot() {
           {/* Chat Messages Container */}
           <div
             id="chatboxMessages"
-            className="flex-1 bg-neutral-100 p-1 overflow-y-auto"
+            className="chat-container"
           ></div>
 
           {/* Typing Indicator */}
