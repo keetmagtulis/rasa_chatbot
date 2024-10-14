@@ -88,39 +88,37 @@ function Chatbot() {
               addMessage('bot', message.text);
             }
             if(message.buttons){
-              addMessage('bot', message.buttons);
+              addButtons('bot', message.buttons);
             }
             if(message.image){
-              addMessage('bot', message.image);
+              addImages('bot', message.image);
             }
-        })
-      .catch(error => {
-        console.error('Error', error);
-      })
+        });
       }) 
   
       }
 
-  const addButtons = (buttons) => {
-    const buttonContainer = document.createElement('div');
-    buttonContainer.className = 'button-container';
-
-    buttons.forEach(button => {
-      const btn = document.createElement('button');
-      btn.className = 'response-button';
-      btn.innerText = button.title;
-      btn.onclick = function () {
-        sendMessage(button.payload);
-        this.style.backgroundColor = "rgb(170, 40, 40)";
-        this.style.color = "#fff";
-        this.disabled = true;
+      const addButtons = (sender, buttons) => {
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'button-container';
+      
+        buttons.forEach(button => {
+          const btn = document.createElement('button');
+          btn.className = 'response-button';
+          btn.innerText = button.title; // Render the button title correctly
+          btn.onclick = function () {
+            sendMessage(button.payload); // Send button payload
+            this.style.backgroundColor = "rgb(170, 40, 40)";
+            this.style.color = "#fff";
+            this.disabled = true;
+          };
+          buttonContainer.appendChild(btn);
+        });
+      
+        document.getElementById('chatboxMessages').appendChild(buttonContainer);
+        document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
       };
-      buttonContainer.appendChild(btn);
-    });
-
-    document.getElementById('chatboxMessages').appendChild(buttonContainer);
-    document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
-  };
+      
 
     function addImages(sender, imageUrl) {
       const imageContainer = document.createElement('div');
