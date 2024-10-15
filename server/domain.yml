@@ -23,6 +23,19 @@ responses:
         payload: "/faqs"
       - title: "About Us"
         payload: "/about_us"
+      - title: "Services"
+        payload: "/services"
+
+  utter_faqs: 
+  - text: |
+          Here are some FAQs
+    buttons: 
+      - title: "How much is your rate?"
+        payload: "/rate"
+      - title: "What is your contact number?"
+        payload: "/contacts"
+      - title: "How can I customize and order?"
+        payload: "/customize_tutorial"
 
   utter_greet:
   - text: "Hey! How are you?"

@@ -110,7 +110,7 @@ function Chatbot() {
       btn.className = 'response-button';
       btn.innerText = button.title;
       btn.onclick = function () {
-        sendMessage(button.payload);
+        sendButtonPayload(button.payload);
         this.style.backgroundColor = "rgb(0, 0, 0)";
         this.style.color = "#fff";
         this.disabled = true;
@@ -121,6 +121,29 @@ function Chatbot() {
     document.getElementById('chatboxMessages').appendChild(buttonContainer);
     document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
   };
+
+
+  function sendButtonPayload(payload) {
+    fetch(apiUrl, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({"message": payload}) 
+    })
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(message => {
+          if(message.text) {
+              addMessage('bot', message.text);
+          }
+          if(message.button) {
+              addButtons('bot', message.buttons);
+          }
+          if(message.image) {
+              addImages('bot', message.image);
+          }
+        });
+    });
+  }
 
   function addImages(sender, imageUrl) {
     const imageContainer = document.createElement('div');
