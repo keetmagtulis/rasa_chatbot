@@ -135,7 +135,7 @@ function Chatbot() {
           if(message.text) {
               addMessage('bot', message.text);
           }
-          if(message.button) {
+          if(message.buttons) {
               addButtons('bot', message.buttons);
           }
           if(message.image) {
