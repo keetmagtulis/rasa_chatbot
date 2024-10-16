@@ -9,7 +9,7 @@ function NavBar() {
     
     <div className='fixed flex justify-end items-center space-x-2 bg-neutral-900 cursor-pointer w-screen h-16 text-md text-neutral-300 pr-20 z-50'>
 
-        <Link to="/customize" ><div className='hover:bg-neutral-700 h-14 px-3 content-center'>Shop</div></Link>   
+        <Link to="/shop" ><div className='hover:bg-neutral-700 h-14 px-3 content-center'>Shop</div></Link>   
 
         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className=" hover:bg-neutral-700 px-3 text-center h-14 inline-flex items-center" type="button">About
 
@@ -26,7 +26,7 @@ function NavBar() {
     </div>
 
     <div className='fixed flex justify-start items-center align-middle h-16 pl-10 text-4xl font-sans z-50'>
-        <h1 className='text-white font-bold'>shoepify.</h1>
+     <Link to='/'><h1 className='text-white font-bold cursor-pointer'>shoepify.</h1></Link>   
     </div>
         
         
