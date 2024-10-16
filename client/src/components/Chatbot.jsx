@@ -79,6 +79,23 @@ function Chatbot() {
     document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
   }
 
+  //Messages for buttons without timestamp
+
+  function addButtonMessage(sender, text) {
+    const messageContainer = document.createElement('div');
+    messageContainer.className = `message ${sender}`;
+
+    const messageText = document.createElement('span');
+    messageText.innerText = text;
+
+    messageContainer.appendChild(messageText);
+
+    document.getElementById('chatboxMessages').appendChild(messageContainer);
+    document.getElementById('chatboxMessages').scrollTop = document.getElementById('chatboxMessages').scrollHeight;
+
+  }
+
+
   function addInitialMessage() {
     fetch(apiUrl, {
       method: "POST",
@@ -89,7 +106,7 @@ function Chatbot() {
       .then(data => {
         data.forEach(message => {
           if (message.text) {
-            addMessage('bot', message.text);
+            addButtonMessage('bot', message.text);
           }
           if (message.buttons) {
             addButtons('bot', message.buttons);
@@ -133,7 +150,7 @@ function Chatbot() {
     .then(data => {
         data.forEach(message => {
           if(message.text) {
-              addMessage('bot', message.text);
+              addButtonMessage('bot', message.text);
           }
           if(message.buttons) {
               addButtons('bot', message.buttons);
