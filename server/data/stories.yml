@@ -33,3 +33,8 @@ stories:
   steps: 
   - intent: faqs
   - action: utter_faqs
+
+- story: About Us
+  steps: 
+  - intent: about_us
+  - action: utter_about_us

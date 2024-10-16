@@ -36,6 +36,16 @@ responses:
         payload: "/contacts"
       - title: "How can I customize and order?"
         payload: "/customize_tutorial"
+  
+  utter_about_us: 
+  - text: |
+      Hi! Welcome to shoepify where we make your ideas into reality, we customize shoes in your own liking. You can choose any shoes you want and customize it in your own liking and we make it for you! Isn't that greate? We also offer some of our products like clothes and pants! You must check it out! 
+
+    buttons: 
+      - title: "Visit Shop"
+        payload: "http://localhost:5173/shop"
+      - title: "Customize Now"
+        payload: "http://localhost:5173/customize"
 
   utter_greet:
   - text: "Hey! How are you?"
