@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function NavBar() {
@@ -8,7 +9,7 @@ function NavBar() {
     
     <div className='fixed flex justify-end items-center space-x-2 bg-neutral-900 cursor-pointer w-screen h-16 text-md text-neutral-300 pr-20 z-50'>
 
-        <div className='hover:bg-neutral-700 h-14 px-3 content-center'>Shop</div>
+        <Link to="/customize" ><div className='hover:bg-neutral-700 h-14 px-3 content-center'>Shop</div></Link>   
 
         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className=" hover:bg-neutral-700 px-3 text-center h-14 inline-flex items-center" type="button">About
 

@@ -126,12 +126,23 @@ function Chatbot() {
       const btn = document.createElement('button');
       btn.className = 'response-button';
       btn.innerText = button.title;
-      btn.onclick = function () {
-        sendButtonPayload(button.payload);
-        this.style.backgroundColor = "rgb(0, 0, 0)";
-        this.style.color = "#fff";
-        this.disabled = true;
-      };
+      
+      if (button.payload.startsWith('http')) {
+          btn.onclick = function () {
+            window.open(button.payload, '_blank');
+          };
+      } 
+      
+      else {
+        btn.onclick = function () {
+          sendButtonPayload(button.payload);
+          this.style.backgroundColor = "rgb(0, 0, 0)";
+          this.style.color = "#fff";
+          this.disabled = true;
+        };
+      }
+      
+
       buttonContainer.appendChild(btn);
     });
 
