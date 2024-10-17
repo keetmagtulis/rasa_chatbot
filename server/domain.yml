@@ -11,6 +11,7 @@ intents:
   - initial_message
   - faqs
   - about_us
+  - services
 
 responses:
 
@@ -46,6 +47,14 @@ responses:
         payload: "http://localhost:5173/shop"
       - title: "Customize Now"
         payload: "http://localhost:5173/customize"
+
+
+  utter_services:
+  - text: | 
+        Shoe Customization is our main service but we also offer some of our products in our shop like clothes, pants and many more! You must go and check it out! 
+    buttons: 
+      - title: "Visit Shop"
+        payload: "http://localhost:5173/shop"
 
   utter_greet:
   - text: "Hey! How are you?"

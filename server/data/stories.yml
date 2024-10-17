@@ -38,3 +38,8 @@ stories:
   steps: 
   - intent: about_us
   - action: utter_about_us
+
+- story: Services
+  steps:
+  - intent: services
+  - action: utter_services
