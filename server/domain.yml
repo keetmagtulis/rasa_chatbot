@@ -8,10 +8,18 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+
+# Initial Message
+
   - initial_message
   - faqs
   - about_us
   - services
+ #FAQs
+
+  - rate
+  - contacts
+  - customize_tutorial
 
 responses:
 
@@ -38,6 +46,23 @@ responses:
       - title: "How can I customize and order?"
         payload: "/customize_tutorial"
   
+  utter_rate: 
+  - text: |
+      Our rate depends on what shoes you want to customize and what the complexity is, However here are some examples: 
+      Air Jordan 1 Low: $x,xxx
+      Addidas Samba: $x,xxx
+      Vans Old Skool: $x,xxx
+
+  utter_contacts:
+  - text: |
+      Send us an email!
+      shoepify@gmail.com
+
+  utter_customize_tutorial:
+  - text: |
+      To customize, go to our customize page. Pick a shoe that you want to customize. 
+      You can change the colors and make your own design. Once done, click finish. After you click finish it will redirect you to the checkout page and from there you can proceed with the shipping details and payment. 
+
   utter_about_us: 
   - text: |
       Hi! Welcome to shoepify where we make your ideas into reality, we customize shoes in your own liking. You can choose any shoes you want and customize it in your own liking and we make it for you! Isn't that greate? We also offer some of our products like clothes and pants! You must check it out! 

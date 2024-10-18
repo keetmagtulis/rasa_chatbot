@@ -34,6 +34,22 @@ stories:
   - intent: faqs
   - action: utter_faqs
 
+
+- story: Rate Path 
+  steps: 
+  - intent: rate
+  - action: utter_rate
+
+- story: Contacts Path 
+  steps: 
+  - intent: contacts
+  - action: utter_contacts
+
+- story: Cuztomize Tutorial Path 
+  steps: 
+  - intent: cuztomize_tutorial
+  - action: utter_customize_tutorial
+
 - story: About Us
   steps: 
   - intent: about_us
