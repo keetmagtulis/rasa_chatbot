@@ -15,12 +15,17 @@ intents:
   - faqs
   - about_us
   - services
+
  #FAQs
 
   - rate
   - contacts
   - customize_tutorial
 
+  #Support
+
+  - support
+  
 responses:
 
   utter_initial_message: 
@@ -99,6 +104,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+actions: 
+  - action_extract_entity
 
 session_config:
   session_expiration_time: 60

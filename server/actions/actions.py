@@ -25,3 +25,32 @@ class ActionHelloWorld(Action):
          dispatcher.utter_message(text="Hello World!")
 
          return []
+     
+
+class ActionExtractEntity(Action): 
+    def name(name) -> Text: 
+        return "action_extract_entity"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        support_entity = next(tracker.get_lastest_entity_values('support_type'), None)
+
+        if support_entity: 
+            dispatcher.utter_message(text = f'I understand you need support with {support_entity}. Please tell me more.')
+
+            if support_entity == "price": 
+                dispatcher.utter_message( response = "utter_rate")
+            
+            elif support_entity == "contact":
+                dispatcher.utter_message( response = "utter_contacts")
+            
+            elif support_entity == "customize":
+                dispatcher.utter_message( response = "utter_customize_tutorial")
+
+
+        else:
+            dispatcher.utter_message(text = "I'm sorry I can't help you with that one.")
+
+        return[]

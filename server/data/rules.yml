@@ -16,3 +16,8 @@ rules:
   steps: 
   - intent: initial_message
   - action: utter_initial_message
+
+- rule: Initial Support Prompt 
+  steps: 
+  - intent: support
+  - action: action_extract_entity
