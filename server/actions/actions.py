@@ -11,26 +11,15 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.types import DomainDict
 
 
-class ActionHelloWorld(Action):
 
-     def name(self) -> Text:
-         return "action_hello_world"
-
-     def run(self, dispatcher: CollectingDispatcher,
-             tracker: Tracker,
-             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-         dispatcher.utter_message(text="Hello World!")
-
-         return []
-     
 
 class ActionExtractEntity(Action): 
-    def name(name) -> Text: 
+    def name(self) -> Text: 
         return "action_extract_entity"
-    
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
