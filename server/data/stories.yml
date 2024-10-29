@@ -47,7 +47,7 @@ stories:
 
 - story: Cuztomize Tutorial Path 
   steps: 
-  - intent: cuztomize_tutorial
+  - intent: customize_tutorial
   - action: utter_customize_tutorial
 
 - story: About Us

@@ -25,6 +25,9 @@ intents:
   #Support
 
   - support
+
+entities: 
+  - support_type
   
 responses:
 

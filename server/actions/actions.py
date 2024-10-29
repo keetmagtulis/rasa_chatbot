@@ -7,7 +7,7 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+from typing import Any, Coroutine, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -24,7 +24,9 @@ class ActionExtractEntity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        support_entity = next(tracker.get_lastest_entity_values('support_type'), None)
+        
+        
+        support_entity = next(tracker.get_latest_entity_values('support_type'), None)
 
         if support_entity: 
             dispatcher.utter_message(text = f'I understand you need support with {support_entity}. Please tell me more.')
