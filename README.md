@@ -1,8 +1,8 @@
-# Chat-Bot
+# E-Commerce Assistant Chat-Bot
 
 ## Overview
 
-The Chat-Bot enhances the Intranet Website by providing users with quick answers to frequently asked questions (FAQs) and basic support. Built using the Rasa framework, this Chat-Bot is designed to streamline user interactions and provide efficient support.
+This Chat-Bot enhances the Website by providing users with quick answers to frequently asked questions (FAQs) and some inquries about the Website. Built using the Rasa framework, this Chat-Bot is designed to streamline user interactions and provide efficient support with the customers.
 
 ## Features
 
@@ -22,62 +22,60 @@ The Chat-Bot enhances the Intranet Website by providing users with quick answers
 
 ## How to Setup
 
-### Frontend
-
-### To run React App 
-
-```bash 
-   npm run dev
+### Clone this repository in your computer 
+```bash
+git clone 
 ```
 
-### Backend
+## Frontend
 
-Python Version - 3.8.10
+### Navigate into the frontend directory
+```bash
+cd client
+```
 
-### Create a virtual environment and activate venv
+### Install dependencies 
+```bash
+npm install
+```
+
+### Run React-App
+```bash
+npm run dev
+```
+
+## Backend
+
+### Navigate into the backend directory 
+```bash
+cd server
+```
+
+### Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Create a virtual environment
 ```bash
 python -m venv .venv
-
-#Activate venv
-source .venv/Scripts/activate
-
 ```
 
-### Downgrade setuptools for the installation of requirements
+### Activate the virtual environment 
 ```bash
-pip install setuptools==58.0.4
+source .venv/bin/activate
 ```
 
-### Installation of Tasa and Requirements
+
+### Installation of Rasa 
 ```bash
    pip install rasa
- 
-   #Installation of requirements
-   pip install -r requirements.txt
-
-```
-## Initialization and Traning of Model
-
-```bash
-rasa init
 ```
 
 
-### How to train model 
-```bash
-rasa train
-```
-### How to run Rasa 
-```bash
-rasa shell
-```
-
-## Enabling Server and Rasa Actions
+### Enabling Server and Rasa Actions
 ```bash
 rasa run --model models --enable-api --cors "*"
 rasa run actions
 ```
-
-## Reference Video 
-https://www.youtube.com/watch?v=_SeXj8Kapzk
 
