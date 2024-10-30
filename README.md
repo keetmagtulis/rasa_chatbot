@@ -24,7 +24,7 @@ This Chat-Bot enhances the Website by providing users with quick answers to freq
 
 ### Clone this repository in your computer 
 ```bash
-git clone 
+git clone https://github.com/keetmagtulis/service-desk-chatbot.git
 ```
 
 ## Frontend
