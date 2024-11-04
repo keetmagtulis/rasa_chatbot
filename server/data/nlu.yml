@@ -98,3 +98,4 @@ nlu:
     - What are your [contact](support_type)?
     - How can I [customize](support_type) my shoes?
     - What will be the [delivery](support_type) time?
+    - What are your [services](support_type)?
