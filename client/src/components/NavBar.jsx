@@ -69,7 +69,7 @@ function NavBar() {
             )}
 
         <div className='hover:bg-neutral-700 h-14 px-3 content-center'>Services</div>
-        <div className='hover:bg-neutral-700 h-14 px-3 content-center'>Contact Us</div>
+        <Link to='/contact'><div className='hover:bg-neutral-700 h-14 px-3 content-center'>Contact Us</div></Link>
         <div className='flex justify-center items-center hover:bg-neutral-700 rounded-full border h-10 w-24'>Log in</div>
 
     </div>
